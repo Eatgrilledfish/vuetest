@@ -78,14 +78,7 @@ export default{
 </script>
 
 <template>
-
-    <!-- <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" /> -->
-
-    <!-- <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div> -->
-    
-  
+    <!-- delete button   -->
     <div :class = "deletebox[index]" v-for="(todo,index) in todos">
       <button @click="removeTodo(todo)" class= "removeTodo">Delete</button>
     </div>
