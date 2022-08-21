@@ -60,20 +60,24 @@ export default{
 
   }),
   methods: {
-    // remove function
+    
     removeTodo(todo) {
-    this.todos.splice(this.todos.indexOf(todo),1);
+      if(confirm('Do you want to delete?') == true){
+      this.todos.splice(this.todos.indexOf(todo),1);
+      }
     // this.todos = this.todos.filter( (t) => t !==todo)
     },
-  
-    // search text function, we use loop match each element of the name, if mathed we return it
+
+  // search text function, we use loop match each element of the name, if mathed we return it
     filterItems: function(todos){
       var app = this;
       return todos.filter(function(todos) {
         let regex = new RegExp('(' + app.searchQuery + ')', 'i');
         return todos.name.match(regex);
       })
-    }
+    },
+
+
   }
 }
 
@@ -85,10 +89,9 @@ export default{
       <button @click="removeTodo(todo)" class= "removeTodo">Delete</button>
     </div>
     <div id="app">
-    
     <!-- search button   -->
     <input v-model="searchQuery" class="searchbox" placeholder="Search for a keyword" />
- 
+
     <!-- that will loop the dist and return the specific values then return it to the UI page  -->
     <div v-for = "(todo,index) in filterItems(todos)" :key="todos.name">
     <div :class = "sstt[index]"  >{{todo.category}}</div>
@@ -100,6 +103,8 @@ export default{
        
      
   
+
+
   <!-- Box UI design-->>
   <ProjectboxA>
     <div class="leftbox">

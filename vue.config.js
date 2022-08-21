@@ -1,4 +1,4 @@
-// module.exports = {
-//     transpileDependencies: true,
-//     publicPath: './'
-// }
+module.exports = {
+    transpileDependencies: true,
+    publicPath: './'
+}
