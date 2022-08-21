@@ -60,11 +60,13 @@ export default{
 
   }),
   methods: {
+    // remove function
     removeTodo(todo) {
     this.todos.splice(this.todos.indexOf(todo),1);
     // this.todos = this.todos.filter( (t) => t !==todo)
     },
-
+  
+    // search text function, we use loop match each element of the name, if mathed we return it
     filterItems: function(todos){
       var app = this;
       return todos.filter(function(todos) {
@@ -84,8 +86,10 @@ export default{
     </div>
     <div id="app">
     
+    <!-- search button   -->
     <input v-model="searchQuery" class="searchbox" placeholder="Search for a keyword" />
  
+    <!-- that will loop the dist and return the specific values then return it to the UI page  -->
     <div v-for = "(todo,index) in filterItems(todos)" :key="todos.name">
     <div :class = "sstt[index]"  >{{todo.category}}</div>
     <div :class = "userbox[index]"    >{{todo.users+" users"}}</div>
@@ -96,7 +100,7 @@ export default{
        
      
   
-
+  <!-- Box UI design-->>
   <ProjectboxA>
     <div class="leftbox">
       
